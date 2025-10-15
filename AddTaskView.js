@@ -1,86 +1,46 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// src/AddTaskView.js
+import React, { useState } from "react";
 
-function AddTaskView({ addTask }) {
-  const [task, setTask] = useState({
-    title: '',
-    description: '',
-    priority: 'low',
-  });
-
-  const navigate = useNavigate();
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setTask((prevTask) => ({
-      ...prevTask,
-      [name]: value,
-    }));
-  };
+export default function AddTaskView({ onAdd }) {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (!task.title.trim() || !task.description.trim()) {
-      alert('Please fill in all fields');
+    if (!title.trim()) {
+      alert("Please enter a task title");
       return;
     }
-
-    addTask({ ...task, id: Date.now() });
-
-    navigate('/');
+    onAdd({ title, description });
+    setTitle("");
+    setDescription("");
   };
 
   return (
-    <div style={{ maxWidth: '600px', margin: '2rem auto', padding: '0 1rem' }}>
-      <h2>Add a New Task</h2>
+    <div className="container mt-4">
+      <h2>Add New Task</h2>
       <form onSubmit={handleSubmit}>
-        <label>
-          Title
-          <input
-            type="text"
-            name="title"
-            value={task.title}
-            onChange={handleChange}
-            required
+        <div className="mb-3">
+          <label className="form-label">Task Title</label>
+          <input 
+            type="text" 
+            className="form-control"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="Enter task title"
-            style={{ width: '100%', padding: '8px', marginBottom: '1rem' }}
           />
-        </label>
-
-        <label>
-          Description
-          <textarea
-            rows={3}
-            name="description"
-            value={task.description}
-            onChange={handleChange}
-            required
-            placeholder="Enter task description"
-            style={{ width: '100%', padding: '8px', marginBottom: '1rem' }}
+        </div>
+        <div className="mb-3">
+          <label className="form-label">Description</label>
+          <textarea 
+            className="form-control"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Enter description (optional)"
           />
-        </label>
-
-        <label>
-          Priority
-          <select
-            name="priority"
-            value={task.priority}
-            onChange={handleChange}
-            style={{ width: '100%', padding: '8px', marginBottom: '1rem' }}
-          >
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
-          </select>
-        </label>
-
-        <button type="submit" style={{ padding: '10px 20px', cursor: 'pointer' }}>
-          Add Task
-        </button>
+        </div>
+        <button type="submit" className="btn btn-primary">Add Task</button>
       </form>
     </div>
   );
 }
-
-export default AddTaskView;

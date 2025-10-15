@@ -1,43 +1,44 @@
-import React from 'react';
+// src/TaskListView.js
+import React from "react";
 
-function TaskListView({ tasks, deleteTask }) {
-  if (tasks.length === 0) {
-    return <p style={{ marginTop: '1rem' }}>No tasks available. Add some tasks!</p>;
-  }
-
-  const getPriorityColor = (priority) => {
-    switch (priority) {
-      case 'high': return 'red';
-      case 'medium': return 'orange';
-      default: return 'gray';
-    }
-  };
-
+export default function TaskListView({ tasks, onDelete, onToggle }) {
   return (
-    <div style={{ marginTop: '1rem' }}>
-      <h2>Task List</h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        {tasks.map(({ id, title, description, priority }) => (
-          <li key={id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #ddd', padding: '0.5rem 0' }}>
-            <div>
-              <h5 style={{ margin: 0 }}>
-                {title} <span style={{ color: 'white', backgroundColor: getPriorityColor(priority), borderRadius: '4px', padding: '0.2rem 0.5rem', fontSize: '0.8rem' }}>
-                  {priority}
-                </span>
-              </h5>
-              <p style={{ margin: 0 }}>{description}</p>
-            </div>
-            <button
-              style={{ backgroundColor: 'transparent', border: '1px solid red', color: 'red', padding: '0.3rem 0.7rem', borderRadius: '4px', cursor: 'pointer' }}
-              onClick={() => deleteTask(id)}
-            >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+    <div className="container mt-4">
+      <h2 className="mb-3">Task List</h2>
+      {tasks.length === 0 ? (
+        <p className="text-muted">No tasks yet. Click "Add Task" to create one.</p>
+      ) : (
+        <ul className="list-group">
+          {tasks.map((task) => (
+          <li
+             key={task.id}
+              className={`list-group-item d-flex justify-content-between align-items-center ${task.completed ? "list-group-item-success" : ""}`}
+      >
+
+              <div>
+                <h5 style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+                  {task.title}
+                </h5>
+                <p className="mb-0 text-muted">{task.description}</p>
+              </div>
+              <div>
+                <button 
+                  className="btn btn-sm btn-success me-2" 
+                  onClick={() => onToggle(task.id)}
+                >
+                  {task.completed ? "Undo" : "Done"}
+                </button>
+                <button 
+                  className="btn btn-sm btn-danger"
+                  onClick={() => onDelete(task.id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
-
-export default TaskListView;

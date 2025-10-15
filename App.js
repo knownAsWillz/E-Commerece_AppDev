@@ -1,30 +1,59 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+// src/App.js
+import React, { useState } from "react";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Header from "./Header";
+import TaskListView from "./TaskListView";
+import AddTaskView from "./AddTaskView";
 
-import Header from './Header';
-import TaskListView from './TaskListView';
-import AddTaskView from './AddTaskView';
-
-function App() {
+export default function App() {
   const [tasks, setTasks] = useState([]);
 
   const addTask = (task) => {
-    setTasks((prevTasks) => [...prevTasks, task]);
+    const id = Date.now();
+    setTasks(prev => [{ ...task, id, completed: false }, ...prev]);
   };
 
   const deleteTask = (id) => {
-    setTasks((prevTasks) => prevTasks.filter(task => task.id !== id));
+    setTasks(prev => prev.filter(t => t.id !== id));
   };
 
+  const toggleCompleted = (id) => {
+    setTasks(prev => prev.map(t => 
+      t.id === id ? { ...t, completed: !t.completed } : t
+    ));
+  };
+
+  const navigate = useNavigate();
+
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<TaskListView tasks={tasks} deleteTask={deleteTask} />} />
-        <Route path="/add" element={<AddTaskView addTask={addTask} />} />
-      </Routes>
-    </Router>
+    <div>
+    <Header />
+      <main className="container my-4">
+        <Routes>
+          <Route 
+            path="/" 
+            element={
+              <TaskListView 
+                tasks={tasks} 
+                onDelete={deleteTask} 
+                onToggle={toggleCompleted} 
+              />
+            } 
+          />
+          <Route 
+            path="/add" 
+            element={
+              <AddTaskView 
+                onAdd={(task) => { 
+                  addTask(task); 
+                  navigate("/"); 
+                }} 
+              />
+            } 
+          />
+          <Route path="*" element={<TaskListView tasks={tasks} onDelete={deleteTask} onToggle={toggleCompleted} />} />
+        </Routes>
+      </main>
+    </div>
   );
 }
-
-export default App;
