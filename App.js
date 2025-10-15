@@ -22,6 +22,8 @@ export default function App() {
       t.id === id ? { ...t, completed: !t.completed } : t
     ));
   };
+//Flores, Jaidel
+
 
   const navigate = useNavigate();
 
