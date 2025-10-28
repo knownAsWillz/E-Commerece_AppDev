@@ -1,25 +1,21 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import heroImage from "../assets/hero.jpg";
 
-
 export default function HomePage() {
-
   return (
     <div className="bg-gray-50 text-gray-800 font-sans">
-
       {/* ✅ Hero Section (Bootstrap-style look) */}
       <section className="container text-center mt-5 d-flex flex-column flex-md-row align-items-center justify-content-between">
-        
         {/* Left Text Section */}
         <div className="md:w-1/2 text-md-start">
-          <h1 className="fw-bold mb-3" style={{ color: '#4CAF50' }}>
+          <h1 className="fw-bold mb-3" style={{ color: "#4CAF50" }}>
             Fresh Produce
           </h1>
           <h2 className="fw-bold mb-3">Delivered to Your Door</h2>
           <p className="text-muted mb-4">
-            Shop the finest selection of organic fruits and vegetables — farm fresh,
-            handpicked daily, and delivered straight to your doorstep.
+            Shop the finest selection of organic fruits and vegetables — farm
+            fresh, handpicked daily, and delivered straight to your doorstep.
           </p>
           <a href="/products" className="btn btn-success btn-lg">
             Shop Now
@@ -37,10 +33,22 @@ export default function HomePage() {
         </div>
       </section>
 
-
       {/* ✅ Why Choose Us Section — Pure CSS version (no Tailwind required) */}
-      <section style={{ backgroundColor: "white", padding: "60px 20px", textAlign: "center" }}>
-        <h2 style={{ fontSize: "32px", fontWeight: "bold", color: "#222", marginBottom: "40px" }}>
+      <section
+        style={{
+          backgroundColor: "white",
+          padding: "60px 20px",
+          textAlign: "center",
+        }}
+      >
+        <h2
+          style={{
+            fontSize: "32px",
+            fontWeight: "bold",
+            color: "#222",
+            marginBottom: "40px",
+          }}
+        >
           Why Choose Us?
         </h2>
 
@@ -72,7 +80,9 @@ export default function HomePage() {
             >
               🥬
             </div>
-            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>100% Organic</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>
+              100% Organic
+            </h3>
             <p style={{ color: "#666", fontSize: "14px", marginTop: "8px" }}>
               Fresh from certified organic farms
             </p>
@@ -95,8 +105,12 @@ export default function HomePage() {
             >
               🚚
             </div>
-            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>Free Delivery</h3>
-            <p style={{ color: "#666", fontSize: "14px", marginTop: "8px" }}>On orders over ₱50</p>
+            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>
+              Free Delivery
+            </h3>
+            <p style={{ color: "#666", fontSize: "14px", marginTop: "8px" }}>
+              On orders over ₱50
+            </p>
           </div>
 
           {/* Feature 3 */}
@@ -116,7 +130,9 @@ export default function HomePage() {
             >
               ⏰
             </div>
-            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>Daily Fresh</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>
+              Daily Fresh
+            </h3>
             <p style={{ color: "#666", fontSize: "14px", marginTop: "8px" }}>
               Restocked every morning
             </p>
@@ -139,16 +155,15 @@ export default function HomePage() {
             >
               🛡️
             </div>
-            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>Quality Guarantee</h3>
+            <h3 style={{ fontSize: "18px", fontWeight: "600", color: "#111" }}>
+              Quality Guarantee
+            </h3>
             <p style={{ color: "#666", fontSize: "14px", marginTop: "8px" }}>
               30-day money-back guarantee
             </p>
           </div>
         </div>
       </section>
-
-
-
 
       {/* ✅ Call to Action (with Hero Background & 50% Overlay) */}
       <section
@@ -175,7 +190,14 @@ export default function HomePage() {
         ></div>
 
         {/* ✅ Content */}
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "700px", margin: "0 auto" }}>
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            maxWidth: "700px",
+            margin: "0 auto",
+          }}
+        >
           <h2
             style={{
               fontSize: "40px",
@@ -193,7 +215,8 @@ export default function HomePage() {
               marginBottom: "30px",
             }}
           >
-            Join thousands of happy customers who trust us for their daily fresh produce needs.
+            Join thousands of happy customers who trust us for their daily fresh
+            produce needs.
           </p>
           <button
             style={{
@@ -213,7 +236,6 @@ export default function HomePage() {
           </button>
         </div>
       </section>
-
 
       {/* ✅ Footer (Fully Fixed with Inline Styles) */}
       <footer
@@ -235,7 +257,14 @@ export default function HomePage() {
         >
           {/* Brand */}
           <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "16px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                marginBottom: "16px",
+              }}
+            >
               <div
                 style={{
                   width: "40px",
@@ -251,21 +280,48 @@ export default function HomePage() {
               >
                 🥬
               </div>
-              <span style={{ fontSize: "22px", fontWeight: "bold", color: "white" }}>FreshMart</span>
+              <span
+                style={{ fontSize: "22px", fontWeight: "bold", color: "white" }}
+              >
+                FreshMart
+              </span>
             </div>
-            <p style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", lineHeight: "1.6" }}>
-              Your trusted source for fresh, organic produce delivered daily with care and sustainability.
+            <p
+              style={{
+                color: "rgba(255,255,255,0.8)",
+                fontSize: "14px",
+                lineHeight: "1.6",
+              }}
+            >
+              Your trusted source for fresh, organic produce delivered daily
+              with care and sustainability.
             </p>
           </div>
 
           {/* Footer Links */}
           {[
-            { title: "Shop", links: ["Vegetables", "Fruits", "Herbs", "Special Offers"] },
-            { title: "Company", links: ["About Us", "Our Farms", "Sustainability", "Careers"] },
-            { title: "Support", links: ["Contact Us", "FAQs", "Shipping", "Returns"] },
+            {
+              title: "Shop",
+              links: ["Vegetables", "Fruits", "Herbs", "Special Offers"],
+            },
+            {
+              title: "Company",
+              links: ["About Us", "Our Farms", "Sustainability", "Careers"],
+            },
+            {
+              title: "Support",
+              links: ["Contact Us", "FAQs", "Shipping", "Returns"],
+            },
           ].map((section, i) => (
             <div key={i}>
-              <h4 style={{ color: "white", marginBottom: "16px", fontWeight: "600", fontSize: "18px" }}>
+              <h4
+                style={{
+                  color: "white",
+                  marginBottom: "16px",
+                  fontWeight: "600",
+                  fontSize: "18px",
+                }}
+              >
                 {section.title}
               </h4>
               <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -279,7 +335,9 @@ export default function HomePage() {
                         transition: "all 0.3s",
                       }}
                       onMouseOver={(e) => (e.target.style.color = "#FFF")}
-                      onMouseOut={(e) => (e.target.style.color = "rgba(255,255,255,0.85)")}
+                      onMouseOut={(e) =>
+                        (e.target.style.color = "rgba(255,255,255,0.85)")
+                      }
                     >
                       {link}
                     </a>
@@ -304,8 +362,6 @@ export default function HomePage() {
           © 2025 FreshMart. All rights reserved.
         </div>
       </footer>
-
-
     </div>
   );
 }
