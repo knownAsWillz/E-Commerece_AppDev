@@ -1,61 +1,28 @@
-// src/App.js
-import React, { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import Header from "./Header";
-import TaskListView from "./TaskListView";
-import AddTaskView from "./AddTaskView";
 
-export default function App() {
-  const [tasks, setTasks] = useState([]);
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import HomePage from './pages/HomePage';
+import Products from './pages/ProductList';
+import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import { CartProvider } from './context/CartContext';
+import ProductList from './pages/ProductList';
 
-  const addTask = (task) => {
-    const id = Date.now();
-    setTasks(prev => [{ ...task, id, completed: false }, ...prev]);
-  };
-
-  const deleteTask = (id) => {
-    setTasks(prev => prev.filter(t => t.id !== id));
-  };
-
-  const toggleCompleted = (id) => {
-    setTasks(prev => prev.map(t => 
-      t.id === id ? { ...t, completed: !t.completed } : t
-    ));
-  };
-//Flores, Jaidel
-
-
-  const navigate = useNavigate();
-
+export default function App(){
   return (
-    <div>
-    <Header />
-      <main className="container my-4">
+    <BrowserRouter>
+      <CartProvider>
+        <Navbar />
         <Routes>
-          <Route 
-            path="/" 
-            element={
-              <TaskListView 
-                tasks={tasks} 
-                onDelete={deleteTask} 
-                onToggle={toggleCompleted} 
-              />
-            } 
-          />
-          <Route 
-            path="/add" 
-            element={
-              <AddTaskView 
-                onAdd={(task) => { 
-                  addTask(task); 
-                  navigate("/"); 
-                }} 
-              />
-            } 
-          />
-          <Route path="*" element={<TaskListView tasks={tasks} onDelete={deleteTask} onToggle={toggleCompleted} />} />
+          <Route path='/' element={<HomePage />} />
+          <Route path='/products' element={<Products />} />
+          <Route path='/products/:id' element={<ProductDetails />} />
+          <Route path='/cart' element={<Cart />} />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
-      </main>
-    </div>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
