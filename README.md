@@ -24,6 +24,21 @@ https://www.figma.com/design/yYKKlKUZz62P5M44bCv0LB/FreshMart-UI?node-id=0-1&p=f
 
 ## Member Documentation
 
+## Member: De Vera (kevs-04)
+
+### 1. What part of the UI did you develop or design?
+I worked on the Navbar and HomePage of our E-Commerce website. The Navbar allows users to navigate easily between pages, while the HomePage serves as the main entry point for users to explore our products.
+
+### 2. What challenges did you encounter using Git for collaboration?
+One challenge I faced was managing multiple branches and avoiding merge conflicts. At first, I got confused about when to push, pull, or merge, but I learned how to properly create branches and make pull requests.
+
+### 3. How does your part contribute to the overall user experience?
+My components improve navigation and first impressions. The Navbar provides smooth access to pages, and the HomePage creates a welcoming and organized layout for users.
+
+### 4. What improvements can be made to the interface or user flow?
+I think adding more responsive design and animation effects could make the interface more interactive and visually appealing.
+
+
 ## Member: William (knownAsWillz)
 
 ### 1. What part of the UI did you develop or design?
