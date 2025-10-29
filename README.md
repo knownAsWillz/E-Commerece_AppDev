@@ -68,6 +68,20 @@ My part improves the user experience by allowing users to easily browse and view
 The interface could be improved by adding filters, search options, and smoother visual interactions for better navigation.ing.
 
 
+## Member: DE LAS LLAGAS, SHANDARA MAE P. (shndrdll)
+
+### 1. What part of the UI did you develop or design?
+I worked on the Cart and Checkout pages, making it easy for users to view items, check totals, and update quantities. I used React Hooks like useState to ensure changes happen in real-time when items are added or removed.
+
+### 2. What challenges did you encounter using Git for collaboration?
+I ran into some merge conflicts when my changes overlapped with others. It was tricky at first, but I learned to pull the latest updates regularly and resolve conflicts in VS Code, which made collaboration smoother.
+
+### 3. How does your part contribute to the overall user experience?
+My work helps users manage their shopping process without confusion. The cart lets them review orders, and the checkout page organizes their purchase flow, making the website feel complete and user-friendly.
+
+### 4. What improvements can be made to the interface or user flow?
+The interface could be enhanced by adding an order summary with options to edit items or apply discounts. Making the pages more mobile-friendly and adding small feedback animations would also improve the overall experience.
+
 ## Setup and Installation
 
 ### Clone this repository:
