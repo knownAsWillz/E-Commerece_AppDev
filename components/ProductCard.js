@@ -1,11 +1,14 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 import images from "../data/imageMap";
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useContext(CartContext);
   const [alertMsg, setAlertMsg] = useState(null);
 
   const handleAdd = () => {
+    addToCart(product);
     setAlertMsg(`${product.name} added to cart!`);
     setTimeout(() => setAlertMsg(null), 2000);
   };
