@@ -53,6 +53,21 @@ My input helped ensure that the interface remained intuitive and cohesive. By su
 ### 4. What improvements can be made to the interface or user flow?
 The checkout process and product browsing experience could be improved for smoother transitions. Adding clearer confirmation prompts and optimizing responsiveness for smaller screens would enhance usability further.
 
+## Member: De Jesus (Jade-DeJesus)
+
+### 1. What part of the UI did you develop or design?
+I developed the Product Listing and Product Details pages using reusable React components (ProductCard) and sample JSON data.
+
+### 2. What challenges did you encounter using Git for collaboration?
+We faced issues where we couldn’t pull or merge branches due to unrelated Git histories, which required using special merge commands to fix.
+
+### 3. How does your part contribute to the overall user experience?
+My part improves the user experience by allowing users to easily browse and view detailed information about each product.
+
+### 4. What improvements can be made to the interface or user flow?
+The interface could be improved by adding filters, search options, and smoother visual interactions for better navigation.ing.
+
+
 ## Setup and Installation
 
 ### Clone this repository:
