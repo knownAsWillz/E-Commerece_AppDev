@@ -68,7 +68,7 @@ My part improves the user experience by allowing users to easily browse and view
 The interface could be improved by adding filters, search options, and smoother visual interactions for better navigation.ing.
 
 
-## ## Member: Flores (jeydelFlores)
+## Member: Flores (jeydelFlores)
 
 ### 1. What part of the UI did you develop or design?
 I developed the overall UI design for FreshMart, creating a clean and consistent layout for pages like the Home, Product, and Checkout sections.
