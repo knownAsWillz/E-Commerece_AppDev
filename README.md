@@ -68,6 +68,22 @@ My part improves the user experience by allowing users to easily browse and view
 The interface could be improved by adding filters, search options, and smoother visual interactions for better navigation.ing.
 
 
+## ## Member: Flores (jeydelFlores)
+
+### 1. What part of the UI did you develop or design?
+I developed the overall UI design for FreshMart, creating a clean and consistent layout for pages like the Home, Product, and Checkout sections.
+
+### 2. What challenges did you encounter using Git for collaboration?
+A major challenge I faced when using Git was coordinating changes with other team members who were also editing the project files.
+
+### 3. How does your part contribute to the overall user experience?
+My UI design contributes to the visual appeal and usability of the website. By maintaining a simple and modern layout, users can easily navigate between pages, browse products, and proceed to checkout without confusion. 
+The design emphasizes clarity and accessibility, helping users focus on the products and making their shopping experience smooth and pleasant.
+
+### 4. What improvements can be made to the interface or user flow?
+The UI can be improved by adding responsiveness, better animations, and clearer visual feedback for user actions.
+
+
 ## Setup and Installation
 
 ### Clone this repository:
